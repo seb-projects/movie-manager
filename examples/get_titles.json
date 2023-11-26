@@ -1,0 +1,20 @@
+{
+  "page": "1",
+  "results": [
+    {
+      "id": "tt0076759",
+      "primaryImage": {
+       "url": "https://m.media-amazon.com/images/M/MV5BNzVlY2MwMjktM2E4OS00Y2Y3LWE3ZjctYzhkZGM3YzA1ZWM2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
+        "caption": {
+          "plainText": "Alec Guinness, Harrison Ford, Anthony Daniels, Carrie Fisher, Mark Hamill, James Earl Jones, Peter Cushing, David Prowse, Kenny Baker, and Peter Mayhew in Star Wars (1977)",
+        }
+      },
+      "titleText": {
+        "text": "Star Wars: Episode IV - A New Hope",
+      },
+      "releaseYear": {
+        "year": 1977
+      }
+    }
+  ]
+}

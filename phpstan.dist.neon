@@ -1,0 +1,11 @@
+parameters:
+	level: 6
+	paths:
+		- src
+		- tests
+	ignoreErrors:
+		- '#Symfony\\Component\\Validator\\Constraint#'
+		- '#with no value type specified in iterable type array#'
+		- '#return type has no value type specified in iterable type array#'
+		- '#type has no value type specified in iterable type array#'
+	checkGenericClassInNonGenericObjectType: false

@@ -1,0 +1,15 @@
+# Test PHP-CS-Fixer
+echo "Running PHP-CS-Fixer\n"
+vendor/friendsofphp/php-cs-fixer/php-cs-fixer fix src --dry-run --diff
+
+# Test PHPStan
+echo "Running PHPStan\n"
+vendor/bin/phpstan
+
+# Test PHPUnit
+echo "Running PHPUnit\n"
+bin/phpunit tests/
+
+# Test Behat
+echo "Running Behat\n"
+vendor/bin/behat features/

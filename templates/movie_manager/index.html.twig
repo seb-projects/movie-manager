@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MovieController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h3>Movie Manager 🎬🍿</h3>
+
+    <div class="container">
+        {{ form_start(form) }}
+        <div class="row">
+            <div class="col-md-4">
+                {{ form_row(form.genre) }}
+            </div>
+            <div class="col-md-4">
+                {{ form_row(form.list) }}
+            </div>
+            <div class="col-md-4">
+                {{ form_row(form.year) }}
+            </div>
+            <div class="col-md-4">
+                {{ form_row(form.title) }}
+            </div>
+            <div class="col-md-4">
+                {{ form_row(form.keyword) }}
+            </div>
+            <div class="col-md-4">
+                {{ form_row(form.page) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4" style="text-align: center">
+                {{ form_widget(form.filter, { 'label': 'Filtrer' }) }}
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            {% for movie in movies %}
+            <div class="col-md-3">
+                <div class="movie">
+                    <img src="{{ movie.urlImage }}" alt="{{ movie.title }}" class="img-fluid text-center" style="max-height: 200px; max-width: 150px;">
+                    <h6><span class="badge bg-primary text-wrap" style="width: 8rem;" class="btn btn-secondary">{{ movie.title }}</span></h6>
+                    <h6>
+                        {% if movie.releaseYear is null %}
+                            <span class="badge bg-danger">n.c</span>
+                        {% else %}
+                            <span class="badge bg-danger">{{ movie.releaseYear }}</span>
+                        {% endif %}
+                        {% if movie.averageRating is null or movie.numVotes is null %}
+                            <span class="badge bg-success">n.c</span>
+                        {% else %}
+                            <span class="badge bg-success">{{ movie.averageRating }}/10 ({{ movie.numVotes }})</span>
+                        {% endif %}
+
+                    </h6>
+                </div>
+            </div>
+            {% if loop.index % 4 == 0 %}
+        </div><div class="row">
+            {% endif %}
+            {% endfor %}
+        </div>
+        {{ form_end(form) }}
+    </div>
+
+</div>
+
+{% endblock %}

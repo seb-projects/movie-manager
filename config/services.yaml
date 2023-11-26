@@ -1,0 +1,19 @@
+parameters:
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        bind:
+            string $movieDatabaseUrl: '%env(MOVIE_DATABASE_URL)%'
+            string $movieDatabaseApiKey: '%env(MOVIE_DATABASE_API_KEY)%'
+    App\:
+        resource: '../src/'
+        exclude:
+            - '../src/DependencyInjection/'
+            - '../src/Entity/'
+            - '../src/Kernel.php'
+
+    App\EventListener\MovieDatabaseExceptionListener:
+        tags: [ kernel.event_listener ]
+
